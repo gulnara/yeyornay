@@ -1,6 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    mime-types (1.25.1)
+    polyglot (0.3.4)
+    pony (1.8)
+      mail (>= 2.0)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
@@ -13,11 +20,15 @@ GEM
     sinatra-redirect-with-flash (0.2.1)
       sinatra (>= 1.0.0)
     tilt (1.4.1)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  pony
   sinatra
   sinatra-flash
   sinatra-redirect-with-flash
