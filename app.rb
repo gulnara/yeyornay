@@ -9,7 +9,7 @@ post '/' do
 	Pony.mail({
 	:from => params[:email],
 	:to => 'gulnara@gulnara.me',
-	:subject => "has contacted you via the Website",
+	:subject => params[:contact_sujet],
 	:body => params[:message],
 	:via => :smtp,
 	:via_options => {
