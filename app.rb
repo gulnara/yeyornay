@@ -16,8 +16,8 @@ post '/' do
 	:address              => 'smtp.mandrillapp.com',
 	:port                 => '587',
 	:enable_starttls_auto => true,
-	:user_name            => 'gmirzaka@gmail.com',
-	:password             => '',
+	:user_name            => ENV['MANDRILL_USERNAME'],
+	:password             => ENV['MANDRILL_APIKEY'],
 	:authentication       => :plain, 
 	:domain               => "codebeta.co" 
 	}
@@ -30,4 +30,5 @@ get('/success') do
 	@notification = "Thanks for your email. I'll be in touch soon."
 	erb :"reload.html"
 end
+
 
