@@ -1,17 +1,109 @@
-well hello again
+<!DOCTYPE html>
+<html lang="en" class="demo-2 no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/demo.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/component.css" />
+		<link rel="stylesheet" href="stylesheets/application.css" type="text/css" /> 
+		<script src="javascript/snap.svg-min.js"></script>
+
+	</head>
+	<body>
+		<div class="container">
+	
+<h1>Hi!</h1>
+<h1>I would love to know how I did in regards to my last interview :) </h1>
+	<section id="grid" class="grid clearfix">
+					<a href="#" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+						<figure>
+							<img src="images/1.png" />
+							<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
+							<figcaption>
+								<h2>You did great!</h2>
+								<p>We can't wait to work with you for a few days on a project for the last round!</p>
+
+			
+				<button><label for="checkcontact" class="contactbutton"><div class="mail"></div></label></button>
+		
+
+								
+							</figcaption>
+						</figure>
+					</a>
+					<a href="#" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+						<figure>
+							<img src="images/2.png" />
+							<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
+							<figcaption>
+								<h2>I need more time.</h2>
+								<p>Hiring is not easy but we will get back to you in ...</p>
+												<button><label for="checkcontact2" class="contactbutton2"><div class="mail2"></div></label></button>
+							</figcaption>
+						</figure>
+					</a>
+	</section>
+
+	<section id="contact">
+		<article>			
+			<input id="checkcontact" type="checkbox">
+				<form action="" method="post" class="contactform">
+
+					<p class="input_wrapper"><input type="text" name="email" value=""  id ="contact_email"><label for="contact_email">EMAIL</label></p>
+					<p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet">SUBJECT</label></p>
+					<p class="textarea_wrapper"><textarea name="message" id="contact_message"></textarea></p>
+					<p class="submit_wrapper"><input type="submit" value="SEND"></p>			
+				</form>
+		</article>
+	</section>
+
+	<section id="contact2">
+		<article>
+			<input id="checkcontact2" type="checkbox">
+				<form action="" method="post" class="contactform2">
 
 
+					<p class="input_wrapper2"><input type="text" name="email" value=""  id ="contact_email2"><label for="contact_email2">EMAIL</label></p>
 
-<form action="" method="post">
+					<p class="input_wrapper2"><input type="text" name="contact_sujet" value=""  id ="contact_sujet2"><label for="contact_sujet2">SUBJECT</label></p>
 
-	<strong>Your email</strong>
-	<input type='email' name='email' style='width: 210px;' required='required' /><br />
+					<p class="textarea_wrapper2"><textarea name="message" id="contact_message2"></textarea></p>
 
-	<strong style='vertical-align:top;'>Your message</strong>
-	<textarea name='message' style='height: 100px; width: 514px;'></textarea><br />
+					<p class="submit_wrapper2"><input type="submit" value="SEND"></p>			
+				</form>
+		</article>
+	</section>
+</div><!-- /container -->
+		<script>
+			(function() {
+	
+				function init() {
+					var speed = 330,
+						easing = mina.backout;
 
+					[].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+							pathConfig = {
+								from : path.attr( 'd' ),
+								to : el.getAttribute( 'data-path-hover' )
+							};
 
+						el.addEventListener( 'mouseenter', function() {
+							path.animate( { 'path' : pathConfig.to }, speed, easing );
+						} );
 
-	<input type='submit' value='All done'   /><br />
-</form>
-              
+						el.addEventListener( 'mouseleave', function() {
+							path.animate( { 'path' : pathConfig.from }, speed, easing );
+						} );
+					} );
+				}
+
+				init();
+
+			})();
+		</script>
+	</body>
+</html>
