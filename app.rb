@@ -27,7 +27,6 @@ end
 
 
 get('/success') do
-	@notification = "Thanks for your email. I'll be in touch soon."
 	erb :"reload.html"
 end
 
